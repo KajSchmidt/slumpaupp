@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slumpa Uppdrag</title>
+        <style>
+
+            html, body {
+                margin: 0px;
+                height: 100%;
+                width: 100%;
+            }
+
+            main {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: stretch;
+                justify-content: center;
+            }
+
+            section {
+                min-width: 20%;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section class="branch">
+                <h1 onclick="slumpaBranch()">Branch</h1>
+                <p></p>
+            </section>
+            <section class="ort">
+                <h1 onclick="slumpaOrt()">Ort</h1>
+                <p></p>
+            </section>
+            <section class="farger">
+                <h1 onclick="slumpaFarg()">Färger</h1>
+                <p></p>
+            </section>
+            <section class="varden">
+                <h1 onclick="slumpaVarden()">Värden</h1>
+                <p></p>
+            </section>
+        </main>
+
+        <script>
+            const alla_brancher = ['Frisör','Pizzeria','Möbler']
+            const alla_orter = ['Haparanda','Kalix','Övertorneå']
+            const alla_farger = ['Svart','Röd','Grön','Blå']
+            const alla_varden = ['Prisvärt','Hightech','Hemtrevligt']
+
+            const sida = {}
+            sida["branch"] = document.querySelector("section.branch")
+            sida["ort"] = document.querySelector("section.ort")
+            sida["farger"] = document.querySelector("section.farger")
+            sida["varden"] = document.querySelector("section.varden")
+
+            function slumpa(lista) {
+                let slumpNum = Math.floor(Math.random() * lista.length)
+                return lista[slumpNum]
+            }
+
+            function slumpaBranch() {
+                let branch = slumpa(alla_brancher)
+                let element = sida["branch"].querySelector("p")
+                element.innerText = branch
+
+            }
+
+            function slumpaOrt() {
+                let ort = slumpa(alla_orter)
+                let element = sida["ort"].querySelector("p")
+                element.innerText = ort
+
+            }
+
+            function slumpaFarg() {
+                let farg = slumpa(alla_farger)
+                let element = sida["farger"].querySelector("p")
+                element.innerText = farg
+
+            }
+
+            function slumpaVarden() {
+                let varden = slumpa(alla_varden)
+                let element = sida["varden"].querySelector("p")
+                element.innerText = varden
+
+            }
+
+        </script>
+    </body>
+</html>
