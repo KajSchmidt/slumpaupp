@@ -20,31 +20,49 @@
             }
 
             section {
+                height: 100%;
                 min-width: 20%;
                 display: flex;
                 flex-flow: column nowrap;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
+            }
+
+            div.head {
+                height: 45%;
+                width: 100%;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            div.head span {
+                cursor: pointer;
+            }
+
+            div.content {
+                width: 100%;
             }
         </style>
     </head>
     <body>
         <main>
             <section class="branch">
-                <h1 onclick="slumpaBranch()">Branch</h1>
-                <p></p>
+                <div class="head"><h1>Branch <span onclick="slumpaBranch()">&#8634;</span> <span onclick="slumpaBranch('add')">&#x2b;</span></h1></div>
+                <div class="content"></div>
             </section>
             <section class="ort">
-                <h1 onclick="slumpaOrt()">Ort</h1>
-                <p></p>
+                <div class="head"><h1>Ort <span onclick="slumpaOrt()">&#8634;</span> <span onclick="slumpaOrt('add')">&#x2b;</span></h1></div>
+                <div class="content"></div>
             </section>
             <section class="farger">
-                <h1 onclick="slumpaFarg()">Färger</h1>
-                <p></p>
+                <div class="head"><h1>Färger <span onclick="slumpaFarg()">&#8634;</span> <span onclick="slumpaFarg('add')">&#x2b;</span></h1></div>
+                <div class="content"></div>
             </section>
             <section class="varden">
-                <h1 onclick="slumpaVarden()">Värden</h1>
-                <p></p>
+                <div class="head"><h1>Värden <span onclick="slumpaVarden()">&#8634;</span> <span onclick="slumpaVarden('add')">&#x2b;</span></h1></div>
+                <div class="content"></div>
             </section>
         </main>
 
@@ -54,43 +72,67 @@
             const alla_farger = ['Svart','Röd','Grön','Blå']
             const alla_varden = ['Prisvärt','Hightech','Hemtrevligt']
 
-            const sida = {}
-            sida["branch"] = document.querySelector("section.branch")
-            sida["ort"] = document.querySelector("section.ort")
-            sida["farger"] = document.querySelector("section.farger")
-            sida["varden"] = document.querySelector("section.varden")
+            const columns = {};
+            columns["branch"] = document.querySelector("section.branch")
+            columns["ort"] = document.querySelector("section.ort")
+            columns["farger"] = document.querySelector("section.farger")
+            columns["varden"] = document.querySelector("section.varden")
 
-            function slumpa(lista) {
-                let slumpNum = Math.floor(Math.random() * lista.length)
-                return lista[slumpNum]
+            function slumpa(list) {
+                let rnd = Math.floor(Math.random() * list.length)
+                return list[rnd]
             }
 
-            function slumpaBranch() {
-                let branch = slumpa(alla_brancher)
-                let element = sida["branch"].querySelector("p")
-                element.innerText = branch
+            function slumpaBranch(action) {
+                if (!action) { var action = "replace" }
+                let value = slumpa(alla_brancher)
+                let content = columns["branch"].querySelector("div.content")
 
+                if (action == "replace") {
+                    content.innerHTML = "<p>" + value + "</p>"
+                }
+                else if (action == "add") {
+                    content.innerHTML += "<p>" + value + "</p>"
+                }
             }
 
-            function slumpaOrt() {
-                let ort = slumpa(alla_orter)
-                let element = sida["ort"].querySelector("p")
-                element.innerText = ort
+            function slumpaOrt(action) {
+                if (!action) { var action = "replace" }
+                let value = slumpa(alla_orter)
+                let content = columns["ort"].querySelector("div.content")
 
+                if (action == "replace") {
+                    content.innerHTML = "<p>" + value + "</p>"
+                }
+                else if (action == "add") {
+                    content.innerHTML += "<p>" + value + "</p>"
+                }
             }
 
-            function slumpaFarg() {
-                let farg = slumpa(alla_farger)
-                let element = sida["farger"].querySelector("p")
-                element.innerText = farg
+            function slumpaFarg(action) {
+                if (!action) { var action = "replace" }
+                let value = slumpa(alla_farger)
+                let content = columns["farger"].querySelector("div.content")
 
+                if (action == "replace") {
+                    content.innerHTML = "<p>" + value + "</p>"
+                }
+                else if (action == "add") {
+                    content.innerHTML += "<p>" + value + "</p>"
+                }
             }
 
-            function slumpaVarden() {
-                let varden = slumpa(alla_varden)
-                let element = sida["varden"].querySelector("p")
-                element.innerText = varden
+            function slumpaVarden(action) {
+                if (!action) { var action = "replace" }
+                let value = slumpa(alla_varden)
+                let content = columns["varden"].querySelector("div.content")
 
+                if (action == "replace") {
+                    content.innerHTML = "<p>" + value + "</p>"
+                }
+                else if (action == "add") {
+                    content.innerHTML += "<p>" + value + "</p>"
+                }
             }
 
         </script>
