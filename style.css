@@ -3,6 +3,8 @@ html, body {
     margin: 0px;
     height: 100%;
     width: 100%;
+    font-family: 'Roboto';
+    background-image: radial-gradient(#222222, #111111);
 }
 
 main {
@@ -25,28 +27,22 @@ section {
 }
 
 section:nth-of-type(1) {
-    background-color: #550400;
+    background-image: radial-gradient(#6A123C, #470022)
 }
 
 section:nth-of-type(2) {
-    background-color: #004208;
+    background-image: radial-gradient(#804715, #552800)
 }
 
 section:nth-of-type(3) {
-    background-color: #460024;
+    background-image: radial-gradient(#4F7514, #2F4E00)
 }
 
 section:nth-of-type(4) {
-    background-color: #365000;
+    background-image: radial-gradient(#0E494E, #013034)
 }
 
-section:nth-of-type(5) {
-    background-color: #440028;
-}
 
-section:nth-of-type(6) {
-    background-color: #220439;
-}
 
 div.head {
     min-height: 45%;
@@ -64,8 +60,17 @@ div.head span {
 
 div.body {
     width: 100%;
+    font-weight: bold;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
+}
+
+div.color {
+    display: inline-block;
+    min-width: 0.6em;
+    max-width: 0.6em;
+    min-height: 0.6em;
+    max-height: 0.6em;
 }
