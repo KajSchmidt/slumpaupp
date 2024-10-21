@@ -14,6 +14,7 @@
     }
 
     getItem(list, exclude) {
+        if (list.length == exclude.length) { return }
         let randomItem = list[Math.floor(Math.random() * list.length)]
         while (exclude.includes(randomItem)) {
             randomItem = list[Math.floor(Math.random() * list.length)]
@@ -22,6 +23,7 @@
     }
 
     addItem(target, value, action) {
+        if (!value) { return }
         for (let category of this.store["categories"]) {
             if (category["name"] == target) {
                 if (action == "reset") {
@@ -39,13 +41,26 @@
 
             let catHeader = document.createElement("h1")
             catHeader.innerText = category["name"]
-            let catHeaderReload = document.createElement("span")
-            catHeaderReload.innerHTML = "&#8634;"
-            catHeaderReload.onclick = () => { 
+
+            /* Reroll item button */
+            let catHeaderReroll = document.createElement("span")
+            catHeaderReroll.innerHTML = "&#8634;"
+            catHeaderReroll.onclick = () => { 
                 this.addItem(category["name"], this.getItem(category["avaliable"], category["values"]), "reset")
                 this.reload() 
             }
-            catHeader.append(catHeaderReload)
+            catHeader.append(catHeaderReroll)
+
+            /* Add item button */
+            let catHeaderAdd = document.createElement("span")
+            catHeaderAdd.innerHTML = "&#x2b;"
+            catHeaderAdd.onclick = () => { 
+                this.addItem(category["name"], this.getItem(category["avaliable"], category["values"]), "add")
+                this.reload() 
+            }
+            catHeader.append(catHeaderAdd)
+
+            
             let catHeaderContainer = document.createElement("div")
             catHeaderContainer.classList.add("head")
             catHeaderContainer.append(catHeader)
@@ -69,7 +84,7 @@
                     catBodyItem.prepend(catBodyItemColor)
                 }
                 else if (category["type"] == "tricluster") {
-                    
+
                 }
             }
 
