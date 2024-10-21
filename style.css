@@ -32,10 +32,10 @@ div.head {
     align-items: center;
 }
 
-div.head span {
-    cursor: pointer;
-}
-
-div.content {
+div.body {
     width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
 }
