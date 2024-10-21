@@ -36,6 +36,6 @@ div.body {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
 }
