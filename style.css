@@ -21,6 +21,31 @@ section {
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
+    color:#ffffff;
+}
+
+section:nth-of-type(1) {
+    background-color: #550400;
+}
+
+section:nth-of-type(2) {
+    background-color: #004208;
+}
+
+section:nth-of-type(3) {
+    background-color: #460024;
+}
+
+section:nth-of-type(4) {
+    background-color: #365000;
+}
+
+section:nth-of-type(5) {
+    background-color: #440028;
+}
+
+section:nth-of-type(6) {
+    background-color: #220439;
 }
 
 div.head {
@@ -30,6 +55,11 @@ div.head {
     flex-flow: column nowrap;
     justify-content: flex-end;
     align-items: center;
+}
+
+div.head span {
+    cursor: pointer;
+    margin-left: 5px;
 }
 
 div.body {
