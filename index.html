@@ -2,49 +2,8 @@
 <html>
     <head>
         <title>Slumpa Uppdrag</title>
-        <style>
-
-            html, body {
-                margin: 0px;
-                height: 100%;
-                width: 100%;
-            }
-
-            main {
-                height: 100%;
-                width: 100%;
-                display: flex;
-                flex-flow: row nowrap;
-                align-items: stretch;
-                justify-content: center;
-            }
-
-            section {
-                height: 100%;
-                min-width: 20%;
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: flex-start;
-                align-items: center;
-            }
-
-            div.head {
-                min-height: 45%;
-                width: 100%;
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: flex-end;
-                align-items: center;
-            }
-
-            div.head span {
-                cursor: pointer;
-            }
-
-            div.content {
-                width: 100%;
-            }
-        </style>
+        <link rel="Stylesheet" href="style.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <main>
@@ -67,73 +26,7 @@
         </main>
 
         <script>
-            const alla_brancher = ['Frisör','Pizzeria','Möbler']
-            const alla_orter = ['Haparanda','Kalix','Övertorneå']
-            const alla_farger = ['Svart','Röd','Grön','Blå']
-            const alla_varden = ['Prisvärt','Hightech','Hemtrevligt']
-
-            const columns = {};
-            columns["branch"] = document.querySelector("section.branch")
-            columns["ort"] = document.querySelector("section.ort")
-            columns["farger"] = document.querySelector("section.farger")
-            columns["varden"] = document.querySelector("section.varden")
-
-            function slumpa(list) {
-                let rnd = Math.floor(Math.random() * list.length)
-                return list[rnd]
-            }
-
-            function slumpaBranch(action) {
-                if (!action) { var action = "replace" }
-                let value = slumpa(alla_brancher)
-                let content = columns["branch"].querySelector("div.content")
-
-                if (action == "replace") {
-                    content.innerHTML = "<p>" + value + "</p>"
-                }
-                else if (action == "add") {
-                    content.innerHTML += "<p>" + value + "</p>"
-                }
-            }
-
-            function slumpaOrt(action) {
-                if (!action) { var action = "replace" }
-                let value = slumpa(alla_orter)
-                let content = columns["ort"].querySelector("div.content")
-
-                if (action == "replace") {
-                    content.innerHTML = "<p>" + value + "</p>"
-                }
-                else if (action == "add") {
-                    content.innerHTML += "<p>" + value + "</p>"
-                }
-            }
-
-            function slumpaFarg(action) {
-                if (!action) { var action = "replace" }
-                let value = slumpa(alla_farger)
-                let content = columns["farger"].querySelector("div.content")
-
-                if (action == "replace") {
-                    content.innerHTML = "<p>" + value + "</p>"
-                }
-                else if (action == "add") {
-                    content.innerHTML += "<p>" + value + "</p>"
-                }
-            }
-
-            function slumpaVarden(action) {
-                if (!action) { var action = "replace" }
-                let value = slumpa(alla_varden)
-                let content = columns["varden"].querySelector("div.content")
-
-                if (action == "replace") {
-                    content.innerHTML = "<p>" + value + "</p>"
-                }
-                else if (action == "add") {
-                    content.innerHTML += "<p>" + value + "</p>"
-                }
-            }
+   
 
         </script>
     </body>
