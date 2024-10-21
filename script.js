@@ -9,6 +9,7 @@
 
     createCategory(data) {
         if (!data["values"]) { data["values"] = []}
+        if (!data["type"]) { data["tyoe"] = "tag"}
         this.store["categories"].push(data)
     }
 

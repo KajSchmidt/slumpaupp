@@ -13,19 +13,23 @@
         <script>
             const slumpa = new rndCat()
 
-            let brancher = {
+            slumpa.createCategory({
                 "name":"Brancher",
                 "type":"tag",
                 "avaliable":["Skomakare","Bilmekaniker","Pizzeria"] 
-            }
-            slumpa.createCategory(brancher)
+            })
 
-            let farger = {
+            slumpa.createCategory({
                 "name":"Färg",
                 "type":"color",
                 "avaliable":["#ff0000","#00ff00","#0000ff"] 
-            }
-            slumpa.createCategory(farger)
+            })
+
+            slumpa.createCategory({
+                "name":"Ort",
+                "type":"tag",
+                "avaliable":["Alingsås", "Arboga", "Arvika", "Askersund", "Avesta", "Boden", "Bollnäs", "Borgholm", "Borlänge", "Borås", "Båstad", "Djursholm", "Eksjö", "Enköping", "Eskilstuna", "Eslöv", "Fagersta", "Falkenberg", "Falköping", "Falsterbo", "Falun", "Filipstad", "Flen", "Gränna", "Gävle", "Göteborg", "Hagfors", "Halmstad", "Haparanda", "Hedemora", "Helsingborg", "Hjo", "Hudiksvall", "Huskvarna", "Härnösand", "Hässleholm", "Höganäs", "Jönköping", "Kalmar", "Karlshamn", "Karlskoga", "Karlskrona", "Karlstad", "Katrineholm", "Kiruna", "Kristianstad", "Kristinehamn", "Kumla", "Kungsbacka", "Kungälv", "Köping", "Laholm", "Landskrona", "Lidingö", "Lidköping", "Lindesberg", "Linköping", "Ljungby", "Lomma", "Ludvika", "Luleå", "Lund", "Lycksele", "Lysekil", "Malmö", "Mariefred", "Mariestad", "Marstrand", "Mjölby", "Motala", "Mölndal", "Nacka", "Nora", "Norrköping", "Norrtälje", "Nybro", "Nyköping", "Nynäshamn", "Nässjö", "Oskarshamn", "Oxelösund", "Piteå", "Ronneby", "Sala", "Sandviken", "Sigtuna", "Simrishamn", "Skara", "Skellefteå", "Skänninge", "Skövde", "Sollefteå", "Stockholm", "Strängnäs", "Sundbyberg", "Sundsvall", "Säffle", "Säter", "Söderhamn", "Södertälje", "Sölvesborg", "Torshälla", "Tranås", "Trelleborg", "Trollhättan", "Trosa", "Uddevalla", "Ulricehamn", "Umeå", "Uppsala", "Vadstena", "Varberg", "Vaxholm", "Vetlanda", "Vimmerby", "Visby", "Vänersborg", "Värnamo", "Västervik", "Västerås", "Växjö", "Ystad", "Åmål", "Ängelholm", "Örebro", "Örnsköldsvik", "Östersund"] 
+            })
 
 
             slumpa.draw()
