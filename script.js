@@ -99,8 +99,9 @@
                     let catBodyItem = document.createElement("span")
                     catBodyItem.innerText = catBodyContent
                     catBodyContainer.append(catBodyItem)
-                    let catBodyItemColor = document.createElement("span")
-                    catBodyItemColor.innerHTML = "&#x2588;"
+                    let catBodyItemColor = document.createElement("i")
+                    catBodyItemColor.classList.add("fa-solid")
+                    catBodyItemColor.classList.add("fa-square-full")
                     catBodyItemColor.classList.add("color")
                     catBodyItemColor.style.color = catBodyContent
                     catBodyItem.prepend(catBodyItemColor)
