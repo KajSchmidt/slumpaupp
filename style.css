@@ -67,10 +67,6 @@ div.body {
     align-items: center;
 }
 
-div.color {
-    display: inline-block;
-    min-width: 0.6em;
-    max-width: 0.6em;
-    min-height: 0.6em;
-    max-height: 0.6em;
+span.color {
+    margin-right: 0.5em;
 }

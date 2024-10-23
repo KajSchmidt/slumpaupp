@@ -86,10 +86,10 @@
                     let catBodyItem = document.createElement("span")
                     catBodyItem.innerText = catBodyContent
                     catBodyContainer.append(catBodyItem)
-                    let catBodyItemColor = document.createElement("div")
-                    catBodyItemColor.innerHTML = "&nbsp;"
+                    let catBodyItemColor = document.createElement("span")
+                    catBodyItemColor.innerHTML = "&#x2588;"
                     catBodyItemColor.classList.add("color")
-                    catBodyItemColor.style.backgroundColor = catBodyContent
+                    catBodyItemColor.style.color = catBodyContent
                     catBodyItem.prepend(catBodyItemColor)
                 }
                 else if (category["type"] == "tricluster") {
