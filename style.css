@@ -53,9 +53,15 @@ div.head {
     align-items: center;
 }
 
-div.head span {
+div.head i.icon {
+    margin-right: 0.5em;
+    font-size: 0.8em;
+}
+
+div.head i.action {
     cursor: pointer;
     margin-left: 5px;
+    font-size: 0.8em;
 }
 
 div.body {

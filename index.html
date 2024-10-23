@@ -3,8 +3,13 @@
     <head>
         <title>Slumpa Uppdrag</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        
+        <link href="/fontawesome-free-6.6.0-web/css/fontawesome.css" rel="stylesheet" />
+        <link href="/fontawesome-free-6.6.0-web/css/brands.css" rel="stylesheet" />
+        <link href="/fontawesome-free-6.6.0-web/css/solid.css" rel="stylesheet" />
+        
         <link rel="Stylesheet" href="style.css">
         <script src="script.js"></script>
     </head>
@@ -19,24 +24,28 @@
             slumpa.createCategory({
                 "name":"Branch",
                 "type":"tag",
+                "icon":"fa-solid fa-people-group",
                 "avaliable":["Fastighetsbolag","Reklambyrå","Advokatbyrå","Redovisningsbyrå","Byggföretag","Entreprenadföretag","Arkitektbyrå","Ingenjörsfirma","Tillverkningsföretag","Restaurang","Café","Hotell","Bed & Breakfast","Transportföretag"," Flygbolag","Rederi","Taxiföretag","Biluthyrningsföretag","Fastighetsmäklare","Försäkringsbolag","Bank","Körskola","Tandläkarklinik","Apotek","Veterinärklinik","Gym","Spa","Skönhetssalong","Frisörsalong","Klädbutik","Skobutik","Smyckesbutik","Sportbutik","Bokhandel","Blomsterhandel","Livsmedelsbutik","Leksaksbutik","Möbelaffär","Vitvarubutik","Byggvaruhus","Trädgårdscenter","Bilverkstad","Bensinstation","Tvätteri","Städservice","Flyttfirma","Vaktbolag","Zoo","Nöjespark","Biograf","Teater","Musikstudio","Förlag","Massageklinik","Skomakare","Pizzeria"] 
             })
 
             slumpa.createCategory({
                 "name":"Färg",
                 "type":"color",
+                "icon":"fa-solid fa-palette",
                 "avaliable":["MediumVioletRed","DeepPink","PaleVioletRed","HotPink","LightPink","Pink","DarkRed","Red","Firebrick","Crimson","IndianRed","LightCoral","Salmon","DarkSalmon","LightSalmon","OrangeRed","Tomato","DarkOrange","Coral","Orange","DarkKhaki","Gold","Khaki","PeachPuff","Yellow","PaleGoldenrod","Moccasin","PapayaWhip","LightGoldenrodYellow","LemonChiffon","LightYellow","Maroon","Brown","SaddleBrown","Sienna","Chocolate","DarkGoldenrod","Peru","RosyBrown","Goldenrod","SandyBrown","Tan","Burlywood","Wheat","NavajoWhite","Bisque","BlanchedAlmond","Cornsilk","Indigo","Purple","DarkMagenta","DarkViolet","DarkSlateBlue","BlueViolet","DarkOrchid","Fuchsia","Magenta","SlateBlue","MediumSlateBlue","MediumOrchid","MediumPurple","Orchid","Violet","Plum","Thistle","Lavender","MidnightBlue","Navy","DarkBlue","MediumBlue","Blue","RoyalBlue","SteelBlue","DodgerBlue","DeepSkyBlue","CornflowerBlue","SkyBlue","LightSkyBlue","LightSteelBlue","LightBlue","PowderBlue","Teal","DarkCyan","LightSeaGreen","CadetBlue","DarkTurquoise","MediumTurquoise","Turquoise","Aqua","Cyan","Aquamarine","PaleTurquoise","LightCyan","DarkGreen","Green","DarkOliveGreen","ForestGreen","SeaGreen","Olive","OliveDrab","MediumSeaGreen","LimeGreen","Lime","SpringGreen","MediumSpringGreen","DarkSeaGreen","MediumAquamarine","YellowGreen","LawnGreen","Chartreuse","LightGreen","GreenYellow","PaleGreen","MistyRose","AntiqueWhite","Linen","Beige","WhiteSmoke","LavenderBlush","OldLace","AliceBlue","Seashell","GhostWhite","Honeydew","FloralWhite","Azure","MintCream","Snow","Ivory","White","Black","DarkSlateGray","DimGray","SlateGray","Gray","LightSlateGray","DarkGray","Silver","LightGray","Gainsboro"] 
             })
 
             slumpa.createCategory({
                 "name":"Ort",
                 "type":"tag",
+                "icon":"fa-solid fa-map-location",
                 "avaliable":["Alingsås", "Arboga", "Arvika", "Askersund", "Avesta", "Boden", "Bollnäs", "Borgholm", "Borlänge", "Borås", "Båstad", "Djursholm", "Eksjö", "Enköping", "Eskilstuna", "Eslöv", "Fagersta", "Falkenberg", "Falköping", "Falsterbo", "Falun", "Filipstad", "Flen", "Gränna", "Gävle", "Göteborg", "Hagfors", "Halmstad", "Haparanda", "Hedemora", "Helsingborg", "Hjo", "Hudiksvall", "Huskvarna", "Härnösand", "Hässleholm", "Höganäs", "Jönköping", "Kalmar", "Karlshamn", "Karlskoga", "Karlskrona", "Karlstad", "Katrineholm", "Kiruna", "Kristianstad", "Kristinehamn", "Kumla", "Kungsbacka", "Kungälv", "Köping", "Laholm", "Landskrona", "Lidingö", "Lidköping", "Lindesberg", "Linköping", "Ljungby", "Lomma", "Ludvika", "Luleå", "Lund", "Lycksele", "Lysekil", "Malmö", "Mariefred", "Mariestad", "Marstrand", "Mjölby", "Motala", "Mölndal", "Nacka", "Nora", "Norrköping", "Norrtälje", "Nybro", "Nyköping", "Nynäshamn", "Nässjö", "Oskarshamn", "Oxelösund", "Piteå", "Ronneby", "Sala", "Sandviken", "Sigtuna", "Simrishamn", "Skara", "Skellefteå", "Skänninge", "Skövde", "Sollefteå", "Stockholm", "Strängnäs", "Sundbyberg", "Sundsvall", "Säffle", "Säter", "Söderhamn", "Södertälje", "Sölvesborg", "Torshälla", "Tranås", "Trelleborg", "Trollhättan", "Trosa", "Uddevalla", "Ulricehamn", "Umeå", "Uppsala", "Vadstena", "Varberg", "Vaxholm", "Vetlanda", "Vimmerby", "Visby", "Vänersborg", "Värnamo", "Västervik", "Västerås", "Växjö", "Ystad", "Åmål", "Ängelholm", "Örebro", "Örnsköldsvik", "Östersund"] 
             })
 
             slumpa.createCategory({
                 "name":"Värden",
                 "type":"tag",
+                "icon":"fa-solid fa-face-grin",
                 "avaliable":["Stilrent", "Prisvärt", "Futuristiskt"] 
             })
             

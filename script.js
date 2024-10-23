@@ -51,9 +51,18 @@
             let catHeader = document.createElement("h1")
             catHeader.innerText = category["name"]
 
+            if (category["icon"]) {
+                let catHeaderIcon = document.createElement("i")
+                catHeaderIcon.className = category["icon"]
+                catHeaderIcon.classList.add("icon")
+                catHeader.prepend(catHeaderIcon)
+            }
+
             /* Reroll item button */
-            let catHeaderReroll = document.createElement("span")
-            catHeaderReroll.innerHTML = "&#8634;"
+            let catHeaderReroll = document.createElement("i")
+            catHeaderReroll.classList.add("fa-solid")
+            catHeaderReroll.classList.add("fa-rotate")
+            catHeaderReroll.classList.add("action")
             catHeaderReroll.setAttribute("title", "Slumpa om")
             catHeaderReroll.onclick = () => { 
                 this.addItem({"category":category["name"], "item":this.getItem({"list":category["avaliable"],"current": category["items"], "exclude":[]}), "action":"reset"})
@@ -62,8 +71,10 @@
             catHeader.append(catHeaderReroll)
 
             /* Add item button */
-            let catHeaderAdd = document.createElement("span")
-            catHeaderAdd.innerHTML = "&#x2b;"
+            let catHeaderAdd = document.createElement("i")
+            catHeaderAdd.classList.add("fa-solid")
+            catHeaderAdd.classList.add("fa-plus")
+            catHeaderAdd.classList.add("action")
             catHeaderAdd.setAttribute("title", "Lägg till en")
             catHeaderAdd.onclick = () => { 
                 this.addItem({"category":category["name"], "item":this.getItem({"list":category["avaliable"],"current": category["items"], "exclude":[]}), "action":"add"})
