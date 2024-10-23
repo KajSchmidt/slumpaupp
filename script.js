@@ -54,6 +54,7 @@
             /* Reroll item button */
             let catHeaderReroll = document.createElement("span")
             catHeaderReroll.innerHTML = "&#8634;"
+            catHeaderReroll.setAttribute("title", "Slumpa om")
             catHeaderReroll.onclick = () => { 
                 this.addItem({"category":category["name"], "item":this.getItem({"list":category["avaliable"],"current": category["items"], "exclude":[]}), "action":"reset"})
                 this.reload() 
@@ -63,6 +64,7 @@
             /* Add item button */
             let catHeaderAdd = document.createElement("span")
             catHeaderAdd.innerHTML = "&#x2b;"
+            catHeaderAdd.setAttribute("title", "Lägg till en")
             catHeaderAdd.onclick = () => { 
                 this.addItem({"category":category["name"], "item":this.getItem({"list":category["avaliable"],"current": category["items"], "exclude":[]}), "action":"add"})
                 this.reload() 
