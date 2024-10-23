@@ -8,29 +8,38 @@
     }
 
     createCategory(data) {
-        if (!data["values"]) { data["values"] = []}
+        if (!data["items"]) { data["items"] = []}
         if (!data["type"]) { data["tyoe"] = "tag"}
         this.store["categories"].push(data)
     }
 
-    getItem(list, exclude) {
-        if (list.length == exclude.length) { return }
-        let randomItem = list[Math.floor(Math.random() * list.length)]
-        while (exclude.includes(randomItem)) {
-            randomItem = list[Math.floor(Math.random() * list.length)]
+    getItem(items) {
+        let response = {"item":"","error":"noerror"}
+        let randomItem = items.list[Math.floor(Math.random() * items.list.length)]
+        if (items.list.length <= (items.exclude.length + items.current.length)) {
+            response["item"] = randomItem
+            response["error"] = "eol" /* End of list error */
         }
-        return randomItem
+        else {
+            while (items.exclude.includes(randomItem) || items.current.includes(randomItem)) {
+                randomItem = items.list[Math.floor(Math.random() * items.list.length)]
+            }
+            response["item"] = randomItem
+        }
+        return response
     }
 
-    addItem(target, value, action) {
-        if (!value) { return }
+    addItem(item) {
         for (let category of this.store["categories"]) {
-            if (category["name"] == target) {
-                if (action == "reset") {
-                    category["values"] = [value]
+            if (category["name"] == item["category"]) {
+                if (item.action == "reset") {
+                    category["items"] = [item.item["item"]]
                 }
-                else if (action == "add") {
-                    category["values"].push(value)
+                else if (item.action == "add" && item.item["error"] == "eol") {
+                    return
+                }
+                else if (item.action == "add") {
+                    category["items"].push(item.item["item"])
                 }
             }
         } 
@@ -46,7 +55,7 @@
             let catHeaderReroll = document.createElement("span")
             catHeaderReroll.innerHTML = "&#8634;"
             catHeaderReroll.onclick = () => { 
-                this.addItem(category["name"], this.getItem(category["avaliable"], category["values"]), "reset")
+                this.addItem({"category":category["name"], "item":this.getItem({"list":category["avaliable"],"current": category["items"], "exclude":[]}), "action":"reset"})
                 this.reload() 
             }
             catHeader.append(catHeaderReroll)
@@ -55,7 +64,7 @@
             let catHeaderAdd = document.createElement("span")
             catHeaderAdd.innerHTML = "&#x2b;"
             catHeaderAdd.onclick = () => { 
-                this.addItem(category["name"], this.getItem(category["avaliable"], category["values"]), "add")
+                this.addItem({"category":category["name"], "item":this.getItem({"list":category["avaliable"],"current": category["items"], "exclude":[]}), "action":"add"})
                 this.reload() 
             }
             catHeader.append(catHeaderAdd)
@@ -67,7 +76,7 @@
 
             let catBodyContainer = document.createElement("div")
             catBodyContainer.classList.add("body")
-            for (let catBodyContent of category["values"]) {
+            for (let catBodyContent of category["items"]) {
                 if (category["type"] == "tag") {
                     let catBodyItem = document.createElement("span")
                     catBodyItem.innerText = catBodyContent
